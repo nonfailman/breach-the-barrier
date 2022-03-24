@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "699410690639",
+    "project_id": "breach-the-barrier",
+    "storage_bucket": "breach-the-barrier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699410690639:android:c58b3f45f84b4c123e303a",
+        "android_client_info": {
+          "package_name": "com.abl.breachthebarrier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699410690639-gjfi2kuu201a2f2qc4t978e4m42e4sp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG59BIKD0pFdSGVCIj8ulJrlIzT6UHNKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699410690639-gjfi2kuu201a2f2qc4t978e4m42e4sp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

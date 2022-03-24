@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BreachTheBarrier</string>
+
+    <string name="user_name_label">User Name</string>
+    <string name="password_label">Password</string>
+
+    <string name="log_in_button">Log In</string>
+    <string name="sign_in_button">Sign In</string>
+</resources>
