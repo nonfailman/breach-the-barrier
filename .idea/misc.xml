@@ -8,7 +8,8 @@
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/authentication_frame.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/edit_text_background.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/ic_launcher_background.xml" value="0.178" />
-        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_log_in.xml" value="0.22826086956521738" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_log_in.xml" value="0.1" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_sign_in.xml" value="0.20923913043478262" />
       </map>
     </option>
   </component>
