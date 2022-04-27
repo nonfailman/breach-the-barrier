@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,7 +93,7 @@ public class LogInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Toast.makeText(LogInActivity.this, "Sucsessfully logged in!",
+                            Toast.makeText(LogInActivity.this, "Successfully logged in!",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
@@ -115,7 +116,10 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-
+        if (user != null){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void reload(){}

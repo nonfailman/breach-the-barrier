@@ -51,7 +51,7 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Toast.makeText(SignInActivity.this, "Sucsessfully created account",
+                            Toast.makeText(SignInActivity.this, "Successfully created account",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
