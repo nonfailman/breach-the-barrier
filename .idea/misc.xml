@@ -6,15 +6,25 @@
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/app_background.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/authentication_frame.xml" value="0.178" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/background_question.xml" value="0.1" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/background_right_answer.xml" value="0.178" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/background_wrong_answer.xml" value="0.1" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/edit_text_background.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/ic_baseline_courses_24.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/ic_baseline_leaderboard_24.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/drawable/ic_launcher_background.xml" value="0.178" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/font/fonts.xml" value="0.284375" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_course.xml" value="0.264" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
-        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_main.xml" value="0.20923913043478262" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/activity_sign_in.xml" value="0.20923913043478262" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/fragment_courses.xml" value="0.20923913043478262" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/fragment_leaderboard.xml" value="0.20923913043478262" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/fragment_notifications.xml" value="0.11302083333333333" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/fragment_records.xml" value="0.20923913043478262" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/layout/rv_item_course.xml" value="0.1" />
+        <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11302083333333333" />
         <entry key="..\:/Work/Android_Studio/BreachTheBarrier/app/src/main/res/menu/menu_activity_main.xml" value="0.25416666666666665" />
       </map>
     </option>

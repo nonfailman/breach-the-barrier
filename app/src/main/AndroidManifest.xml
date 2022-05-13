@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BreachTheBarrier">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.CourseActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".ui.SignInActivity"
             android:exported="false" />

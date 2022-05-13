@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,15 +27,29 @@ public class SignInActivity extends AppCompatActivity {
 
     private EditText editTextNewUserName;
     private EditText editTextNewPassword;
+    private EditText editTextRepeatNewPassword;
+
+    private View decorView;
+    private Window window;
+    private int windowOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         firebaseAuth = FirebaseAuth.getInstance();
+
+        decorView = getWindow().getDecorView();
+        window = getWindow();
+
         Button buttonSignIn = (Button) findViewById(R.id.buttonSignIn);
         editTextNewUserName = (EditText) findViewById(R.id.editTextNewUserName);
-        editTextNewPassword = (EditText) findViewById(R.id.editTextNewPassword);
+        editTextNewPassword = (EditText) findViewById(R.id.edit_text_new_password);
+        editTextRepeatNewPassword = findViewById(R.id.edit_text_repeat_new_password);
+
+        windowOptions = WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        window.setFlags(windowOptions, windowOptions);
+        getSupportActionBar().hide();
 
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,12 +81,18 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void onSignInButtonClicked(){
-        createAccount(editTextNewUserName.getText().toString(), editTextNewPassword.getText().toString());
+        String password = editTextNewPassword.getText().toString();
+        String repeatedPassword = editTextRepeatNewPassword.getText().toString();
+        if(password.equals(repeatedPassword)){
+            createAccount(editTextNewUserName.getText().toString(), password);
+        } else {
+            Toast.makeText(SignInActivity.this, "Пароли не совпадают", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void reload() { }
 
     private void updateUI(FirebaseUser user) {
-
+        finish();
     }
 }

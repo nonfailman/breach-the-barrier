@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/courses"
+        android:id="@+id/navigation_courses"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_courses_24"
-        android:title="@string/courses_menu_item_title"/>
+        android:title="@string/title_courses_menu_item"/>
 
     <item
-        android:id="@+id/records"
+        android:id="@+id/navigation_records"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_records_24"
-        android:title="@string/records_menu_item_title"/>
+        android:title="@string/title_records_menu_item"/>
 
     <item
-        android:id="@+id/leaders"
+        android:id="@+id/navigation_leaderboard"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_leaderboard_24"
-        android:title="@string/leaders_menu_item_title"/>
+        android:title="@string/title_leaderboard_menu_item"/>
 </menu>

@@ -1,0 +1,19 @@
+package com.abl.breachthebarrier.ui.main.records;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
+public class RecordsViewModel extends ViewModel {
+
+    private final MutableLiveData<String> mText;
+
+    public RecordsViewModel() {
+        mText = new MutableLiveData<>();
+        mText.setValue("Это фрагмент рекордов");
+    }
+
+    public LiveData<String> getText() {
+        return mText;
+    }
+}

@@ -3,11 +3,17 @@
 
     <string name="user_name_label">e-mail</string>
     <string name="password_label">пароль</string>
+    <string name="repeat_password_label">повторите пароль</string>
 
-    <string name="log_in_button">Войти</string>
-    <string name="sign_in_button">Создать</string>
+    <string name="text_log_in_button">Войти</string>
+    <string name="text_sign_in_button">Создать</string>
+    <string name="text_submit_answer_button">Ответить</string>
+    <string name="text_next_question_button">Далее</string>
 
-    <string name="courses_menu_item_title">Курсы</string>
-    <string name="records_menu_item_title">Результаты</string>
-    <string name="leaders_menu_item_title">Список лидеров</string>
+    <string name="title_courses_menu_item">Курсы</string>
+    <string name="title_records_menu_item">Результаты</string>
+    <string name="title_leaderboard_menu_item">Лидеры</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="description_question_image">Каритинка вопроса</string>
 </resources>

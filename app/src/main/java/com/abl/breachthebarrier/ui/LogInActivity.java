@@ -5,7 +5,6 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,11 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogInActivity extends AppCompatActivity {
 
     View decorView;
-
     Window window;
-
-    int uiOptions;
-
     int windowOptions;
 
     private FirebaseAuth firebaseAuth;
@@ -85,7 +80,7 @@ public class LogInActivity extends AppCompatActivity {
 
 
 
-    private void signIn(String email, String password) {
+    private void logIn(String email, String password) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -107,7 +102,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void onLogInButtonClicked(){
-        signIn(editTextLogIn.getText().toString(), editTextPwd.getText().toString());
+        logIn(editTextLogIn.getText().toString(), editTextPwd.getText().toString());
     }
 
     private void onSignInButtonClicked(){
