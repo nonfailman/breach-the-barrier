@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abl.breachthebarrier.data.Course;
@@ -98,7 +98,7 @@ public class CoursesFragment extends Fragment {
 
         recyclerView = binding.coursesRecyclerView;
         adapter = new CoursesAdapter(getContext(), courses, onItemClickListener);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
@@ -106,6 +106,7 @@ public class CoursesFragment extends Fragment {
     private void updateUI(Course course){
         Intent intent = new Intent(getContext(), CourseActivity.class);
         intent.putExtra("unit_title", course.getTitle());
+        intent.putExtra("course_id",course.getTitle());
         Log.d("UnitTitle", course.getTitle());
         startActivity(intent);
     }

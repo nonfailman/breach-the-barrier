@@ -1,9 +1,11 @@
 package com.abl.breachthebarrier.ui;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,11 +23,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CourseActivity extends AppCompatActivity {
+
+    private Bundle arguments;
 
     private String courseTitle;
 
@@ -34,6 +40,9 @@ public class CourseActivity extends AppCompatActivity {
     private List<Question> questions;
     private boolean dataGet;
     private int questionNumber;
+    private int rightAnswers;
+
+    private ActionBar actionBar;
 
     private TextView question;
 
@@ -54,17 +63,24 @@ public class CourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
-        Bundle arguments = getIntent().getExtras();
+        arguments = getIntent().getExtras();
         courseTitle = arguments.getString("unit_title");
 
         db = FirebaseFirestore.getInstance();
         questions = new ArrayList<>();
         dataGet = false;
         questionNumber = 0;
+        rightAnswers = 0;
 
         initInterface();
         getDataFromDb();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        actionBar.setTitle("Вопрос " + (questionNumber+1) + " / 10");
     }
 
     @Override
@@ -74,6 +90,8 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     private void initInterface(){
+        actionBar = getSupportActionBar();
+
         question = findViewById(R.id.text_question);
 
         image = findViewById(R.id.image_question);
@@ -126,21 +144,34 @@ public class CourseActivity extends AppCompatActivity {
 
 
     private void setData(List<Question> questions, int number){
-        if(number > questions.size()-1){
+        if(number >= questions.size()){
             return;
         }
+
         Drawable drawable = AppCompatResources.getDrawable(CourseActivity.this, R.drawable.background_answer);
         answer1.setBackground(drawable);
         answer2.setBackground(drawable);
         answer3.setBackground(drawable);
         answer4.setBackground(drawable);
 
+        Picasso.get()
+                .load(questions.get(number).getImage())
+                .into(image);
+
+        Question currentQuestion = questions.get(number);
+        List<String> answers = new ArrayList<>();
+        answers.add(currentQuestion.getAnswer1());
+        answers.add(currentQuestion.getAnswer2());
+        answers.add(currentQuestion.getAnswer3());
+        answers.add(currentQuestion.getAnswer4());
+        Collections.shuffle(answers);
+
         question.setText(questions.get(number).getQuestion());
 
-        answer1.setText(questions.get(number).getAnswer1());
-        answer2.setText(questions.get(number).getAnswer2());
-        answer3.setText(questions.get(number).getAnswer3());
-        answer4.setText(questions.get(number).getAnswer4());
+        answer1.setText(answers.get(0));
+        answer2.setText(answers.get(1));
+        answer3.setText(answers.get(2));
+        answer4.setText(answers.get(3));
     }
 
     private void onSubmitAnswerButtonClick(){
@@ -154,19 +185,25 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     private void onNextQuestionButtonClick(){
+        if(questionNumber >= questions.size()){
+            loadScoreActivity();
+            return;
+        }
         loadNextQuestion();
         submitAnswer.setText(R.string.text_submit_answer_button);
         submitAnswer.setOnClickListener(onSubmitAnswerButtonClickListener);
         radioGroup.clearCheck();
+        actionBar.setTitle("Вопрос " + (questionNumber+1) + " / 10");
     }
 
     private void checkAnswer(int questionNumber){
-        if(questionNumber > questions.size()-1){
+        if(questionNumber > questions.size()){
             return;
         }
         RadioButton radioChecked = findViewById(radioGroup.getCheckedRadioButtonId());
         if(radioChecked.getText().toString().equals(questions.get(questionNumber-1).getAnswer1())){
             setRightAnswerBackground(radioChecked);
+            rightAnswers++;
         } else{
             setWrongAnswerBackground(radioChecked );
         }
@@ -184,5 +221,13 @@ public class CourseActivity extends AppCompatActivity {
 
     private void loadNextQuestion(){
         setData(questions, questionNumber);
+    }
+
+    private void loadScoreActivity(){
+        Intent intent = new Intent(CourseActivity.this, ScoreActivity.class);
+        intent.putExtra("right_answers", rightAnswers);
+        intent.putExtra("course", arguments.getString("course_id"));
+        startActivity(intent);
+        finish();
     }
 }

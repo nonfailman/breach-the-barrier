@@ -43,7 +43,7 @@ public class SignInActivity extends AppCompatActivity {
         window = getWindow();
 
         Button buttonSignIn = (Button) findViewById(R.id.buttonSignIn);
-        editTextNewUserName = (EditText) findViewById(R.id.editTextNewUserName);
+        editTextNewUserName = (EditText) findViewById(R.id.edit_text_new_user_name);
         editTextNewPassword = (EditText) findViewById(R.id.edit_text_new_password);
         editTextRepeatNewPassword = findViewById(R.id.edit_text_repeat_new_password);
 
@@ -67,12 +67,12 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Toast.makeText(SignInActivity.this, "Successfully created account",
+                            Toast.makeText(SignInActivity.this, "Ваш аккаунт создан!",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                            Toast.makeText(SignInActivity.this, "Ошибка регистрации.",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }

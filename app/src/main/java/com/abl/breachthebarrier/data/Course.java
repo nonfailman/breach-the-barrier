@@ -1,15 +1,23 @@
 package com.abl.breachthebarrier.data;
 
+import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.PropertyName;
+
 import java.util.List;
 
 public class Course {
 
+    @PropertyName("id")
     private int id;
 
+    @PropertyName("name")
     private String name;
 
-    private String title;
+    @PropertyName("image")
+    private String image;
 
+   @DocumentId
+    private String title;
 
     public Course(int id, String name, String title) {
         this.id = id;
@@ -37,6 +45,14 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getTitle() {

@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.abl.breachthebarrier.R;
+import com.abl.breachthebarrier.data.UserData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -88,12 +89,12 @@ public class LogInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Toast.makeText(LogInActivity.this, "Successfully logged in!",
+                            Toast.makeText(LogInActivity.this, "Вы успешно вошли!",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LogInActivity.this, "Authentication failed.",
+                            Toast.makeText(LogInActivity.this, "Ошибка авторизации.",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
@@ -112,10 +113,14 @@ public class LogInActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         if (user != null){
+            UserData.getInstance();
+            UserData.setUserEmail(user.getEmail());
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
     }
 
-    private void reload(){}
+    private void reload(){
+
+    }
 }

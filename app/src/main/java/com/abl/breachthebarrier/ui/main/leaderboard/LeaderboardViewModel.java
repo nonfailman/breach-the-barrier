@@ -10,7 +10,7 @@ public class LeaderboardViewModel extends ViewModel {
 
     public LeaderboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Это фрагмент списка лидеров");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

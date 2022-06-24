@@ -7,13 +7,22 @@
 
     <string name="text_log_in_button">Войти</string>
     <string name="text_sign_in_button">Создать</string>
+
     <string name="text_submit_answer_button">Ответить</string>
     <string name="text_next_question_button">Далее</string>
+
+    <string name="text_course_ended">Курс завершён!</string>
+    <string name="text_right_answers">правильных ответов:</string>
+    <string name="text_course_score">ваш счёт:</string>
+
+    <string name="text_leaderboard_placeholder">займите место</string>
+    <string name="text_leader_score_placeholder">0</string>
 
     <string name="title_courses_menu_item">Курсы</string>
     <string name="title_records_menu_item">Результаты</string>
     <string name="title_leaderboard_menu_item">Лидеры</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="description_course_image">Картинка курса</string>
     <string name="description_question_image">Каритинка вопроса</string>
 </resources>

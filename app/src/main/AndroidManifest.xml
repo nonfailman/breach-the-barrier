@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BreachTheBarrier">
         <activity
+            android:name=".ui.ScoreActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.CourseActivity"
             android:exported="false" />
         <activity

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abl.breachthebarrier.R;
 import com.abl.breachthebarrier.data.Course;
 import com.abl.breachthebarrier.databinding.RvItemCourseBinding;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -42,7 +44,11 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CoursesV
     @Override
     public void onBindViewHolder(@NonNull CoursesViewHolder holder, int position) {
         Course course = courses.get(position);
-        holder.textViewCourseId.setText(course.getIdToString());
+
+        Picasso.get()
+                .load(course.getImage())
+                .into(holder.imageCourse);
+
         holder.textViewCourseName.setText(course.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,14 +67,14 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CoursesV
 
         public final View mView;
 
-        TextView textViewCourseId;
+        ImageView imageCourse;
         TextView textViewCourseName;
 
         public CoursesViewHolder(View view){
             super(view);
             mView = view;
 
-            textViewCourseId = mView.findViewById(R.id.textViewCourseId);
+            imageCourse = mView.findViewById(R.id.image_course);
             textViewCourseName = mView.findViewById(R.id.textViewCourseName);
         }
     }

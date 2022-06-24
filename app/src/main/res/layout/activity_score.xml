@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.records.RecordsFragment"
+    tools:context=".ui.ScoreActivity"
     android:background="@drawable/app_background">
 
     <TextView
-        android:id="@+id/text_view_user_name"
+        android:id="@+id/text_course_ended"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -16,14 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/table_layout_user_records"
-        android:background="@drawable/authentication_frame"
+        app:layout_constraintBottom_toTopOf="@id/table_layout_course_results"
         android:textColor="@color/black"
+        android:textSize="40sp"
         android:textAlignment="center"
-        android:textSize="25sp" />
+        android:text="@string/text_course_ended"/>
 
     <TableLayout
-        android:id="@+id/table_layout_user_records"
+        android:id="@+id/table_layout_course_results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
@@ -39,20 +39,19 @@
             android:paddingBottom="5dp">
 
             <TextView
-                android:text="пройдено курсов:"
-                android:id="@+id/text_view_label_complete"
+                android:id="@+id/text_view_label_right_answers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:textColor="@color/black"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:text="@string/text_right_answers"/>
 
             <TextView
-                android:text="0"
-                android:id="@+id/text_view_complete"
+                android:id="@+id/text_view_right_answers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:textColor="@color/black"
                 android:textAlignment="center"
                 android:textSize="30sp"/>
@@ -64,51 +63,26 @@
             android:paddingBottom="5dp">
 
             <TextView
-                android:text="выучено слов: "
-                android:id="@+id/text_view_label_words"
+                android:id="@+id/text_view_label_course_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:textColor="@color/black"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:text="@string/text_course_score" />
 
             <TextView
-                android:text="0"
-                android:id="@+id/text_view_words"
+                android:id="@+id/text_view_course_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:textColor="@color/black"
                 android:textAlignment="center"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
 
         </TableRow>
 
-        <TableRow
-            android:background="@color/black_transparent"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp">
 
-            <TextView
-                android:text="личный счёт: "
-                android:id="@+id/text_view_label_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textSize="30sp"/>
-
-            <TextView
-                android:text="0"
-                android:id="@+id/text_view_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:textSize="30sp"/>
-
-        </TableRow>
 
     </TableLayout>
 
@@ -125,4 +99,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
